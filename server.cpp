@@ -1,7 +1,6 @@
 #include "server.h"
 #include <iostream>
 #include <signal.h>
-#include <string>
 #include <sys/wait.h>
 
 // External utility function
