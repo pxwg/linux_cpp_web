@@ -4,7 +4,7 @@ LDFLAGS = -ldl
 
 SERVER_TARGET = server
 SERVER_OBJS = main.o common.o server.o module.o
-MODULES = diskfree.so
+MODULES = diskfree.so issue.so
 
 all: $(SERVER_TARGET) $(MODULES)
 
@@ -17,5 +17,8 @@ clean:
 # modules
 diskfree.so: diskfree.cpp
 	$(CXX) $(CXXFLAGS) -shared -o $@ diskfree.cpp
+
+issue.so: issue.cpp
+	$(CXX) $(CXXFLAGS) -shared -o $@ issue.cpp
 
 .PHONY: clean
