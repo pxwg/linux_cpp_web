@@ -14,7 +14,7 @@ static const char *page_template = "<html>\n"
 static const char *error_template =
     "<html>\n"
     "<body>\n"
-    "<p>Error: Could not read system issue information.</p>\n"
+    "<p>Error: Could not open /proc/issue.</p>\n"
     "</body>\n"
     "</html>\n";
 
