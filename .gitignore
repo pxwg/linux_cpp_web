@@ -1,0 +1,27 @@
+# Compiled object files
+*.o
+
+# Compiled executable
+server
+
+# Shared libraries
+*.so
+
+# Test server executable  
+test_server
+
+# Temporary files
+temp_*
+
+# Editor backup files
+*~
+*.swp
+*.swo
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
