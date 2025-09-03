@@ -4,7 +4,7 @@ LDFLAGS = -ldl
 
 SERVER_TARGET = server
 SERVER_OBJS = main.o common.o server.o module.o
-MODULES = diskfree.so issue.so
+MODULES = diskfree.so issue.so time.so process.so
 
 all: $(SERVER_TARGET) $(MODULES)
 
@@ -20,5 +20,11 @@ diskfree.so: diskfree.cpp
 
 issue.so: issue.cpp
 	$(CXX) $(CXXFLAGS) -shared -o $@ issue.cpp
+
+time.so: time.cpp
+	$(CXX) $(CXXFLAGS) -shared -o $@ time.cpp
+
+process.so: process.cpp
+	$(CXX) $(CXXFLAGS) -shared -o $@ process.cpp
 
 .PHONY: clean
