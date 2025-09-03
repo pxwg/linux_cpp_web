@@ -24,12 +24,7 @@ extern "C" void module_generate(int client_socket) {
   char line_buffer[256];
   char response_buffer[8192];
 
-  // Try to open /proc/issue
   issue_file = fopen("/proc/issue", "r");
-  if (!issue_file) {
-    // If can't open /proc/issue, try /etc/issue as fallback
-    issue_file = fopen("/etc/issue", "r");
-  }
 
   if (issue_file) {
     while (fgets(line_buffer, sizeof(line_buffer), issue_file)) {
@@ -38,11 +33,9 @@ extern "C" void module_generate(int client_socket) {
     }
     fclose(issue_file);
 
-    // Generate HTML response using template
     snprintf(response_buffer, sizeof(response_buffer), page_template,
              content_buffer);
   } else {
-    // Use error template
     strcpy(response_buffer, error_template);
   }
 
