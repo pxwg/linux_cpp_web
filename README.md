@@ -30,8 +30,6 @@ Options:
 
 ## Available Modules
 
-> Unfinished for now
-
 - `/time` - Display current system time (auto-refresh)
 - `/issue` - Display system release information
 - `/diskfree` - Display disk usage statistics
